@@ -14,7 +14,7 @@
     --notso-energetic-yellow: #EEC550;
 }
 #NAV{
-    background-color: var(--darker-black);
+    background-color: whitesmoke;
     display: grid;
     grid-template: 100% / 4fr 2fr 2fr 2fr;
      align-items: center;
@@ -36,7 +36,7 @@
         display: flex;
         align-items: baseline;
         font-weight: 700;
-        color: white;
+        color: var(--darker-black);
         justify-self: start;
     }
 }
