@@ -51,10 +51,11 @@ function first_flyer_function() {
     the_extend_div[0].style.backgroundColor = 'aqua';
     the_extend_div[0].addEventListener("animationend", () => {
     CIRCLE[0].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
-    PICTUREinCIRCLE[0].style.animation = "rotate 1s forwards, trans 0.5s forwards"
     CIRCLE[1].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
+    PICTUREinCIRCLE[0].style.animation = "rotate 1s forwards, trans 0.5s forwards"
+    CIRCLE[2].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
     PICTUREinCIRCLE[1].style.animation = "rotate 1s forwards, trans 0.5s forwards"
-    CIRCLE[2].style.animation = "EXPAND 1s forwards, trans 0.5s forwards, rotate 1s forwards";
+    CIRCLE[3].style.animation = "EXPAND 1s forwards, trans 0.5s forwards, rotate 1s forwards";
 });
     
 }
@@ -80,7 +81,7 @@ function third_flyer_function() {
 alter_function_of_flyer(2, third_flyer_function)
 
 
-
+//
 //===========scroll event listener to check if in view===================/
 window.addEventListener("scroll", () => {
     for (let i = 0; i < FLYER_11A2.length; i++) {

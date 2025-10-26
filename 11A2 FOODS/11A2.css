@@ -143,6 +143,7 @@ div.flyer{
     div.CIRCLE{
         display:inline-flex;
         opacity: 0;
+        position: absolute;
         border-radius: 55%;
         justify-content: center;
         justify-items: center;
@@ -153,18 +154,28 @@ div.flyer{
         height: var(--CIRCLE1);
         background-color: aqua;
         z-index: 100;
-        position: absolute;
         top: calc((var(--FLYER-HEIGHT) - var(--CIRCLE1))/2);
         left: calc(0vw - var(--CIRCLE1)/2);
         img{
         height: 80%;
         width: 80%;
+        }
+    }
+     div.CIRCLE.TWO{
+        width: calc(var(--CIRCLE1)*0.4);
+        height:calc(var(--CIRCLE1)*0.4);
+        background-color: white;
+        z-index: 101; /*z-index interact with circle one*/
+        bottom: calc(var(--FLYER-HEIGHT)* 0.02);
+        left:  calc(var(--VIEWER_WIDTH)* 0.02);
+        color: aqua;
+        opacity: 1;
+        font-size: calc(var(--CIRCLE1)*0.2);
     }
     }
-    div.CIRCLE.TWO{
+    div.CIRCLE.THREE{
         width: calc(var(--CIRCLE1)*0.5);
         height:calc(var(--CIRCLE1)*0.5);
-        position: absolute;
         left: calc(var(--VIEWER_WIDTH) * 0.16);
         top: calc(var(--FLYER-HEIGHT)*0.1);
         background-color: brown;
@@ -173,27 +184,24 @@ div.flyer{
         width: 70%;
     }
     }
-    div.CIRCLE.THREE{
+    div.CIRCLE.FOUR{
         width: calc(var(--CIRCLE1)*0.2);
         height:calc(var(--CIRCLE1)*0.2);
-        position: absolute;
-        opacity: 0;
         left: calc(var(--VIEWER_WIDTH) * 0.4);
-        top: calc(var(--FLYER-HEIGHT)*0.25);
+        top: calc(var(--FLYER-HEIGHT)*0.34);
         background-color: transparent;
-        font-size: 22vw;
-        font-weight: 700;
-        font-family: monospace;
-        color: white;
+        span{
+            font-size: 22vw;
+            font-weight: 700;
+            color: white;
+            line-height: 0;
+        }       
     }
     div.CIRCLE img{
         transform-origin: center;
         display: inline-block;
         object-fit: cover;
     }
-
-
-}
 @media only screen and (max-width: 700px){
     div.flyer button{
         width: 200px;
@@ -322,7 +330,7 @@ div.GRID div.blacktag{
     --VIEWER_WIDTH: 100vw;
     --number_OF_ITEMS: 4;
     --duration_of_each_item: 7s;
-    --FLYER-HEIGHT: 46vw;
+    --FLYER-HEIGHT: 55vw;
     --extend_ofdiv: 1;
     --CIRCLE1 : 37vw;
 }
