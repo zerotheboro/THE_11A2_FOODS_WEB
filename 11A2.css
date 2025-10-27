@@ -231,7 +231,7 @@ div.flyer{
 /*==========================FLYER OF BOX (GRID)=========================*/
 /*FOR BETTER IDEA CHECK GEO.CSS GEO.HTML */
 div.flyer.background{
-    background-image: url(../image/homemade-chocolate-bars.jpg);
+    background-image: url(image/homemade-chocolate-bars.jpg);
     background-size: cover;
     background-position: center center; /*205%;/*190% is to zoom pic even more downward*/
     background-attachment:fixed;
@@ -251,7 +251,6 @@ div.GRID{
         "blackd blackd blackd blackd blackd blackd";
     opacity: 1; 
 }
-
 div.trans1, div.trans2, div.trans3, div.trans4, div.trans5, div.trans6{
     background-color: transparent;
     border: 3px solid black;
