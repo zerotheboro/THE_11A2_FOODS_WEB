@@ -51,7 +51,7 @@ function first_flyer_function() {
     the_extend_div[0].style.backgroundColor = 'aqua';
     the_extend_div[0].addEventListener("animationend", () => {
     CIRCLE[0].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
-    CIRCLE[1].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
+    CIRCLE[1].style.animation = "EXPAND 1s forwards, trans 0.5s forwards, rotate 1s forwards";
     PICTUREinCIRCLE[0].style.animation = "rotate 1s forwards, trans 0.5s forwards"
     CIRCLE[2].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
     PICTUREinCIRCLE[1].style.animation = "rotate 1s forwards, trans 0.5s forwards"

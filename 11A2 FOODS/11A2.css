@@ -94,8 +94,7 @@ div.menu-item{
 /*=========================FLYER  OF CIRCLE=========================*/
 div.flyer{
     width: var(--VIEWER_WIDTH);
-    background-color: lightgrey;
-    margin: 10px 0 10px 0;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -137,7 +136,7 @@ div.flyer{
         position: absolute;
         width: calc(var(--VIEWER_WIDTH)* 0.55);
         height: inherit;
-        background-color: lightgrey /*same color as flyer*/;
+        background-color: black /*same color as flyer*/;
         transform-origin: right;
     }
     div.CIRCLE{
@@ -162,14 +161,13 @@ div.flyer{
         }
     }
      div.CIRCLE.TWO{
-        width: calc(var(--CIRCLE1)*0.4);
-        height:calc(var(--CIRCLE1)*0.4);
+        width: calc(var(--CIRCLE1)*0.3);
+        height:calc(var(--CIRCLE1)*0.3);
         background-color: white;
         z-index: 101; /*z-index interact with circle one*/
         bottom: calc(var(--FLYER-HEIGHT)* 0.02);
         left:  calc(var(--VIEWER_WIDTH)* 0.02);
         color: aqua;
-        opacity: 1;
         font-size: calc(var(--CIRCLE1)*0.2);
     }
     }
@@ -301,6 +299,7 @@ div.GRID div.blacktag{
     line-height: 0.8;
     grid-area: blacktag;
     text-align: left;
+    padding: 8px;
 }
 
 /*========================FLYER OF TRAPEZIUM==============================*/
@@ -311,7 +310,7 @@ div.GRID div.blacktag{
     width: calc(var(--VIEWER_WIDTH) /1.81);
     height: inherit;
     text-align: center;
-    padding: calc(var(--FLYER-HEIGHT) /2.5) 0 calc(var(--FLYER-HEIGHT) /2) 0 ;
+    padding: calc(var(--FLYER-HEIGHT) /2.5) 0 calc(var(--FLYER-HEIGHT) /2.5) 0 ;
     color: white;
     font-size: 55px;
     font-weight: 700;
@@ -330,7 +329,7 @@ div.GRID div.blacktag{
     --VIEWER_WIDTH: 100vw;
     --number_OF_ITEMS: 4;
     --duration_of_each_item: 7s;
-    --FLYER-HEIGHT: 55vw;
+    --FLYER-HEIGHT: 49vw;
     --extend_ofdiv: 1;
     --CIRCLE1 : 37vw;
 }
@@ -373,7 +372,7 @@ div.GRID div.blacktag{
         transform: rotate(0deg);
     }
     to{
-        transform: rotate(190deg);
+        transform: rotate(370deg);
     }
 }
 @keyframes trans{
