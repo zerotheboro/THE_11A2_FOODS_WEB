@@ -15,11 +15,13 @@ p is 1/1.5
     font-family: monospace;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    margin: 0;
 }
 body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 #search{ 
     width: auto;
@@ -81,6 +83,7 @@ div.menu-item{
     animation: moving var(--duration_of_each_item) linear infinite;
     
     animation-delay: calc(var(--duration_of_each_item)/var(--number_OF_ITEMS) * (2*var(--number_OF_ITEMS)) - (2*var(--i)));
+}
 /*==========THIS WILL BE REMOVE EVENTUALLY CAUSE IT CAUSE ANIMATION GLITCH========== BUT ALSO MIsleading*/
     /* FREEZZE CONTAINER
     min-width: 151px;
@@ -89,48 +92,42 @@ div.menu-item{
     ==========NOTE========= animation delay (2*var(--number_OF_ITEMS)) - (2*var(--i) calc needs to be adjust with width menu item
     ==========NOTE========= THAT VALUE NEED TO HAVE UNIT in this case s for seconds
     calc((var(--VIEWER_WIDTH)/4) -10px)
-    */
-}
-/*=========================FLYER  OF CIRCLE=========================*/
-div.flyer{
-    width: var(--VIEWER_WIDTH);
-    background-color: black;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    */
+div.flyer{
+    width: var(--VIEWER_WIDTH);
+    background-color: black;
     transition: background-color 0.3s ease-in-out;
 }
 @media only screen and (min-width: 700px){
-    div.flyer button{
-        width: 200px;
-        height: 70px;
-        font-size: 30px;
-        border-radius: 50px;
-        background-color: orange;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        margin-right: calc(var(--VIEWER_WIDTH)/2);
-        margin-bottom: calc(10% + 8px);
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 8px 0 darkorange;
-        border: none;
-        z-index: 100;
-    } /*never put ; after closing brace*/
-    div.flyer button:hover, div.flyer button:focus{
-        background-color: rgb(255, 200, 98);
-        color: white;
-    }
-    div.flyer button:focus{
-        margin-bottom: 10%;
-        box-shadow: 0 0px 0 darkorange;
-    }
-
-
     div.flyer{
         height: var(--FLYER-HEIGHT);
         overflow: hidden;
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.flyer:has(h1){
+        background-color: black;
+    }
+    div.flyer h1{
+        font-size: 340px;
+        color: var(--energetic--yellow);
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        text-align: center;
+        text-shadow: 0px 0px 0px var(--lightblue);
+        color: black;
+        transition: all 2s;
+    }
+
+
+/*======================== DIV OF CIRCLE==============================*/
+    div.flyer:has(.CIRCLE){
+        background-color: black;
     }
     div.flyer div.flyer-extender{
         position: absolute;
@@ -200,29 +197,6 @@ div.flyer{
         display: inline-block;
         object-fit: cover;
     }
-@media only screen and (max-width: 700px){
-    div.flyer button{
-        width: 200px;
-        height: 70px;
-        font-size: 30px;
-        border-radius: 50px;
-        background-color: black;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        margin-bottom: 10%;
-        border: none;
-        transition: all 0.1s linear;
-
-    }
-    div.flyer{
-        height: var(--FLYER-HEIGHT);
-    }
-    div.flyer button:hover, div.flyer button:active{
-    background-color: black;
-    color: white;
-    }
-}
 
 
 
@@ -237,6 +211,9 @@ div.flyer.background{
     background-attachment:fixed;
     background-repeat: no-repeat;
     opacity: 0;
+}
+div.flyer:has(.GRID){
+    background-color: black;
 }
 div.GRID{
     width: inherit;
@@ -302,7 +279,9 @@ div.GRID div.blacktag{
 }
 
 /*========================FLYER OF TRAPEZIUM==============================*/
-
+div.flyer:has(.trapzoid){
+    background-color: blue;
+}
 .trapzoid{
     display: inline;
     position: absolute;
@@ -310,7 +289,7 @@ div.GRID div.blacktag{
     height: inherit;
     text-align: center;
     padding: calc(var(--FLYER-HEIGHT) /2.5) 0 calc(var(--FLYER-HEIGHT) /2.5) 0 ;
-    color: white;
+    color: white;  
     font-size: 55px;
     font-weight: 700;
     clip-path: polygon(25% 0, 95% 0, 75% 100%, 5% 100%);
@@ -318,7 +297,6 @@ div.GRID div.blacktag{
     background-position: center center; /*205%;/*190% is to zoom pic even more downward*/
     background-attachment:scroll;
     background-repeat: no-repeat;
-    
 }
 
 /**=========================ANIMATIONS=========================*/
@@ -331,6 +309,13 @@ div.GRID div.blacktag{
     --FLYER-HEIGHT: 49vw;
     --extend_ofdiv: 1;
     --CIRCLE1 : 37vw;
+    --lightblue: #6DE1D2;
+    --energetic--yellow: #FFD63A;
+    --passion-orange: #FFA955;
+    --tomato: #F75A5A;
+    --complement-of-yellow: #203E5F;
+    --darker-black: #1A2634;
+    --notso-energetic-yellow: #EEC550;
 }
 @keyframes EXTEND {
      from{
@@ -418,4 +403,3 @@ div.GRID div.blacktag{
         transform: translate(calc( var(--VIEWER_WIDTH) * 0.2  + var(--VIEWER_WIDTH)/2* 0.3));
     }
 }
-

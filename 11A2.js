@@ -12,12 +12,17 @@ BANNER_11A2.addEventListener("animationend", () => {
 */
 //=====================================FLYER=========================================
 const FLYER_11A2 = document.getElementsByClassName("flyer");//list of all flyer elements
+
 const the_extend_div = document.getElementsByClassName("flyer-extender");//list of all extend div in flyer
+
 const CIRCLE = document.getElementsByClassName("CIRCLE");//list of all div in extend div in flyer
+
 const PICTUREinCIRCLE = document.querySelectorAll("div.CIRCLE img");
+
 const thetrapzoid = document.getElementsByClassName("trapzoid");
+
 function default_function(selector) {
-    selector.style.backgroundColor = 'blue'; //there is smth with._funtion_ it is not the flyer it is the argument passed in
+    selector.style.backgroundColor = 'black'; //there is smth with._funtion_ it is not the flyer it is the argument passed in
 }
 
 class Flyer {
@@ -40,36 +45,61 @@ for(let i = 0; i < FLYER_11A2.length; i++) {
 }
 
 //========A function to alter function to each flyer===========
+
+
 function alter_function_of_flyer(index, new_function) {
     FUNCTION_OF_EACH_FLYER[index].newFunction = new_function;
 }
 
+
+
+const HEAD_LINE = document.querySelector('div.flyer h1')
+HEAD_LINE.style.textShadow = `1px 1px 55px var(--lightblue)`;
+HEAD_LINE.style.color = '#FFD63A';
+function THE_HEAD_LINE(){
+   
+}
+// alter_function_of_flyer(0, THE_HEAD_LINE);
+
+
 /*================================================*/
-function first_flyer_function() {
-    FLYER_11A2[0].style.backgroundColor = 'darkblue';
+
+
+function circle_flyer_function() {
+    const typical_animation_of_circle = "EXPAND 1s forwards, trans 0.5s forwards"
+    FLYER_11A2[1].style.backgroundColor = 'darkblue';
     the_extend_div[0].style.animation = "moving_across 2s forwards";
     the_extend_div[0].style.backgroundColor = 'aqua';
     the_extend_div[0].addEventListener("animationend", () => {
-    CIRCLE[0].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
-    CIRCLE[1].style.animation = "EXPAND 1s forwards, trans 0.5s forwards, rotate 1s forwards";
+    CIRCLE[0].style.animation = typical_animation_of_circle;
+    CIRCLE[1].style.animation = typical_animation_of_circle + `, rotate 1s forwards`;
     PICTUREinCIRCLE[0].style.animation = "rotate 1s forwards, trans 0.5s forwards"
-    CIRCLE[2].style.animation = "EXPAND 1s forwards, trans 0.5s forwards";
+    CIRCLE[2].style.animation = typical_animation_of_circle;
     PICTUREinCIRCLE[1].style.animation = "rotate 1s forwards, trans 0.5s forwards"
-    CIRCLE[3].style.animation = "EXPAND 1s forwards, trans 0.5s forwards, rotate 1s forwards";
+    CIRCLE[3].style.animation = typical_animation_of_circle + `, rotate 1s forwards`;
 });
     
 }
-alter_function_of_flyer(0, first_flyer_function);
+alter_function_of_flyer(1, circle_flyer_function);
+
+
 /*================================================*/
-function second_flyer_function() {
+
+
+function square_flyer_function() {
     document.querySelector('div.flyer.background').style.animation = "trans 1s forwards"
     document.querySelector('div.GRID div.blacktag span').style.animation = "moving_upward 3s forwards"
 }
 
-alter_function_of_flyer(1, second_flyer_function)
+alter_function_of_flyer(2, square_flyer_function)
+
+
 /*================================================*/
+
+
 FLYER_11A2[2].style.backgroundColor= 'blue';
-function third_flyer_function() {
+function trapzoid_flyer_function() {
+    FLYER_11A2[3].style.backgroundColor = 'blue';
     thetrapzoid[0].style.backgroundColor = 'darkblue';
     thetrapzoid[1].style.backgroundColor ='red';
     thetrapzoid[2].style.backgroundColor = 'blue';
@@ -78,10 +108,10 @@ function third_flyer_function() {
     thetrapzoid[0].style.backgroundImage = "url('../image/NuclearWaste.jpg')"
 }
 
-alter_function_of_flyer(2, third_flyer_function)
+alter_function_of_flyer(3, trapzoid_flyer_function)
 
 
-//
+
 //===========scroll event listener to check if in view===================/
 window.addEventListener("scroll", () => {
     for (let i = 0; i < FLYER_11A2.length; i++) {
