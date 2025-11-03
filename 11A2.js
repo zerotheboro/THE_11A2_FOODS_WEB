@@ -22,7 +22,7 @@ const PICTUREinCIRCLE = document.querySelectorAll("div.CIRCLE img");
 const thetrapzoid = document.getElementsByClassName("trapzoid");
 
 function default_function(selector) {
-    selector.style.backgroundColor = 'black'; //there is smth with._funtion_ it is not the flyer it is the argument passed in
+    selector.style.backgroundColor = 'var(--darker-black)'; //there is smth with._funtion_ it is not the flyer it is the argument passed in
 }
 
 class Flyer {
@@ -51,15 +51,14 @@ function alter_function_of_flyer(index, new_function) {
     FUNCTION_OF_EACH_FLYER[index].newFunction = new_function;
 }
 
-
-
 const HEAD_LINE = document.querySelector('div.flyer h1')
-HEAD_LINE.style.textShadow = `1px 1px 55px var(--lightblue)`;
 HEAD_LINE.style.color = '#FFD63A';
-function THE_HEAD_LINE(){
+HEAD_LINE.style.textShadow = `1px 1px 55px var(--lightblue)`;
+FLYER_11A2[0].style.backgroundColor = 'var(--darker-black)';
+/*function THE_HEAD_LINE(){
    
 }
-// alter_function_of_flyer(0, THE_HEAD_LINE);
+alter_function_of_flyer(0, THE_HEAD_LINE);*/
 
 
 /*================================================*/
@@ -67,9 +66,9 @@ function THE_HEAD_LINE(){
 
 function circle_flyer_function() {
     const typical_animation_of_circle = "EXPAND 1s forwards, trans 0.5s forwards"
-    FLYER_11A2[1].style.backgroundColor = 'darkblue';
+    FLYER_11A2[1].style.backgroundColor = 'var(--darker-black)';
     the_extend_div[0].style.animation = "moving_across 2s forwards";
-    the_extend_div[0].style.backgroundColor = 'aqua';
+    the_extend_div[0].style.backgroundColor = 'var(--lightblue)';
     the_extend_div[0].addEventListener("animationend", () => {
     CIRCLE[0].style.animation = typical_animation_of_circle;
     CIRCLE[1].style.animation = typical_animation_of_circle + `, rotate 1s forwards`;
@@ -103,8 +102,8 @@ function trapzoid_flyer_function() {
     thetrapzoid[0].style.backgroundColor = 'darkblue';
     thetrapzoid[1].style.backgroundColor ='red';
     thetrapzoid[2].style.backgroundColor = 'blue';
-    thetrapzoid[0].style.animation = 'RIGHTSHIFT 2.2s forwards'
-    thetrapzoid[2].style.animation = 'LEFTSHIFT 2.2s forwards'
+    thetrapzoid[0].style.animation = 'RIGHTSHIFT 1.9s forwards'
+    thetrapzoid[2].style.animation = 'LEFTSHIFT 1.9s forwards'
     thetrapzoid[0].style.backgroundImage = "url('../image/NuclearWaste.jpg')"
 }
 
