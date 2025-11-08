@@ -22,7 +22,7 @@ const PICTUREinCIRCLE = document.querySelectorAll("div.CIRCLE img");
 const thetrapzoid = document.getElementsByClassName("trapzoid");
 
 function default_function(selector) {
-    selector.style.backgroundColor = 'var(--darker-black)'; //there is smth with._funtion_ it is not the flyer it is the argument passed in
+    //selector.style.backgroundColor = 'var(--darker-black)'; //there is smth with._funtion_ it is not the flyer it is the argument passed in
 }
 
 class Flyer {
@@ -53,8 +53,7 @@ function alter_function_of_flyer(index, new_function) {
 
 const HEAD_LINE = document.querySelector('div.flyer h1')
 HEAD_LINE.style.color = '#FFD63A';
-HEAD_LINE.style.textShadow = `1px 1px 55px var(--lightblue)`;
-FLYER_11A2[0].style.backgroundColor = 'var(--darker-black)';
+// FLYER_11A2[0].style.backgroundColor = 'var(--darker-black)';
 /*function THE_HEAD_LINE(){
    
 }

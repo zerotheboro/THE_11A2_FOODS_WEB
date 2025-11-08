@@ -3,7 +3,6 @@ p is 1/1.5
  CASCADING EFFECTS IN PPT REMEMBER IT IN YT PLAYLIST
  display: hidden  to make it disappear
  display: none to make it disappear and not take up space
- scroll-behavior: smooth; let you scroll smoothly to anchors
  background-clip: text; to make background image appear in text
   text-fill-color: transparent; to make the text color transparent
   then add gradient background to the text
@@ -26,7 +25,7 @@ body{
 
 div.menu{
     display: flex;
-    height: 100px;
+    height: 55vh;
     gap: 10px;
 
     position:relative;
@@ -51,7 +50,12 @@ div.menu-item{
     
     animation-delay: calc((var(--duration_of_each_item) / var(--number_OF_ITEMS)) * var(--i) * -1);
 }
-  
+
+
+
+
+
+/*===============================MAIN SECTION===========*/
 div.flyer{
     width: var(--VIEWER_WIDTH);
     background-color: var(--darker-black);
@@ -70,17 +74,32 @@ div.flyer{
 /*====================HEADLINE-FLYER============*/
     div.flyer:has(h1){
         background-color: black;
+        background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(26, 38, 52, 1));
         transition: background-color 1.3s ;
+        height: calc(var(--FLYER-HEIGHT) + 7vh);
     }
     div.flyer h1{
-        font-size: 340px;
+        font-size: 28vw;
         color: black;
         font-weight: bold;
         letter-spacing: 0.05em;
         text-align: center;
         text-shadow: 0px 0px 0px var(--lightblue);
-        transition: text-shadow 1.6s, color 1s;
+        will-change: text-shadow;
+        animation: GLOW 4s infinite ;
+        margin-bottom: calc(var(--FLYER-HEIGHT)/3);
     }
+ @keyframes GLOW {
+            0%{
+              text-shadow:0px 0px 7px var(--lightblue)
+            }
+            50%{
+                text-shadow:0px 0px 45px var(--lightblue)
+            }
+            100%{
+                text-shadow:0px 0px 7px var(--lightblue)
+            }
+        }
 
 
 /*======================== DIV OF CIRCLE==============================*/
