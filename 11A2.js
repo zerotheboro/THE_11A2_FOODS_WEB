@@ -93,18 +93,24 @@ function square_flyer_function() {
 alter_function_of_flyer(2, square_flyer_function)
 
 
-/*================================================*/
-
+/*======================== --lightblue: #6DE1D2;
+    --energetic--yellow: #FFD63A;
+    --passion-orange: #FFA955;
+    --tomato: #F75A5A;
+    --complement-of-yellow: #203E5F;
+    --darker-black: #1A2634;
+    --notso-energetic-yellow: #EEC550;
+========================*/
 
 FLYER_11A2[2].style.backgroundColor= 'blue';
 function trapzoid_flyer_function() {
-    FLYER_11A2[3].style.backgroundColor = 'blue';
-    thetrapzoid[0].style.backgroundColor = 'darkblue';
-    thetrapzoid[1].style.backgroundColor ='red';
-    thetrapzoid[2].style.backgroundColor = 'blue';
+    FLYER_11A2[3].style.backgroundColor = 'var(--passion-orange)';
+
+    thetrapzoid[0].style.backgroundImage = "url('../image/NuclearWaste.jpg')"
+    thetrapzoid[1].style.backgroundColor ='var(--complement-of-yellow)';
+    thetrapzoid[2].style.backgroundColor = 'var(--passion-orange)';
     thetrapzoid[0].style.animation = 'RIGHTSHIFT 1.9s forwards'
     thetrapzoid[2].style.animation = 'LEFTSHIFT 1.9s forwards'
-    thetrapzoid[0].style.backgroundImage = "url('../image/NuclearWaste.jpg')"
 }
 
 alter_function_of_flyer(3, trapzoid_flyer_function)

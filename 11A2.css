@@ -23,41 +23,7 @@ body{
     padding: 0;
     background-color: var(--darker-black);
 }
-#search{ 
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: flex-start;
-    background-color: lightgrey;
-    border-radius: 1000px;
-    animation:EXTEND 3.4s forwards;
-    margin-left: auto;
-    margin-right: auto;
-}
-#search img{
-    width: calc(var(--BANNER_WIDTH) / 7);
-    margin-left: 20px;
-    margin-right: 10px;
-    align-self: center;
-    opacity: 0;
-    transition: opacity 1.9s ease-in-out 0.5s;
 
-
-}
-#search p{
-    margin : 50px 10%;
-    color: black;
-    font-size: 100px;
-    width : 0px;
-    font-weight: bold;
-    font-family: monospace;
-    border-right: 0 solid rgba(255, 255, 255, 0);
-    /*========typewritter effect=========*/
-    /*animation: TYPE 2.2s steps(10) forwards, BLINK 1s step-end infinite;*/
-    white-space: nowrap;
-    overflow: hidden;
-    /*<div id="search"><img src="../image/magnify-glass.png"><p>11A2 FOODs!!!</p></div>*/
-}
 div.menu{
     display: flex;
     height: 100px;
@@ -68,9 +34,11 @@ div.menu{
     overflow: hidden;
 }
 div.menu-item{
-    display: inline-block;
+    position: absolute;
+    top: 0;
+    display: flex;
     height: inherit;
-    width: calc(var(--VIEWER_WIDTH) / 5);
+    width: calc(var(--VIEWER_WIDTH) / 2);
     position: absolute;
     left: 100%;
 
@@ -80,20 +48,10 @@ div.menu-item{
     
     font-size: 100px;
     animation: moving var(--duration_of_each_item) linear infinite;
-    animation-delay: calc(var(--duration_of_each_item)/var(--number_OF_ITEMS) * (2*var(--number_OF_ITEMS)) - (2*var(--i)));
+    
+    animation-delay: calc((var(--duration_of_each_item) / var(--number_OF_ITEMS)) * var(--i) * -1);
 }
-/*==========THIS WILL BE REMOVE EVENTUALLY CAUSE IT CAUSE ANIMATION GLITCH========== BUT ALSO MIsleading*/
-    /* FREEZZE CONTAINER
-    min-width: 151px;
-    max-width: 600px;
-    flex: 1 1 auto;
-    ==========NOTE========= animation delay (2*var(--number_OF_ITEMS)) - (2*var(--i) calc needs to be adjust with width menu item
-    ==========NOTE========= THAT VALUE NEED TO HAVE UNIT in this case s for seconds
-    calc((var(--VIEWER_WIDTH)/4) -10px)
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    */
+  
 div.flyer{
     width: var(--VIEWER_WIDTH);
     background-color: var(--darker-black);
@@ -116,12 +74,12 @@ div.flyer{
     }
     div.flyer h1{
         font-size: 340px;
-        color: var(--darker-black);
+        color: black;
         font-weight: bold;
         letter-spacing: 0.05em;
         text-align: center;
         text-shadow: 0px 0px 0px var(--lightblue);
-        transition: text-shadow 1s, color 1s;
+        transition: text-shadow 1.6s, color 1s;
     }
 
 
@@ -319,7 +277,7 @@ div.card.D{
 
 /*========================FLYER OF TRAPEZIUM==============================*/
 div.flyer:has(.trapzoid){
-    background-color: blue;
+    background-color: var(--passion-orange);
 }
 .trapzoid{
     /* trapzoid should be block-level and anchored to its parent flyer */
@@ -412,7 +370,7 @@ div.flyer:has(.trapzoid){
         left: 100%;
     }
     to{
-        left: calc( 0% - (var(--VIEWER_WIDTH)/5) );
+        left: calc( -100% - (var(--VIEWER_WIDTH)/5) );
     }
 }
 @keyframes moving_upward{
