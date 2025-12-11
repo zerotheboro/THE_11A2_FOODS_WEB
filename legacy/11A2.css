@@ -31,6 +31,7 @@ div.menu{
     position:relative;
     width: var(--VIEWER_WIDTH);
     overflow: hidden;
+    margin-bottom: var(--white-space);
 }
 div.menu-item{
     position: absolute;
@@ -44,6 +45,7 @@ div.menu-item{
     background-color: rgb(0, 0, 0);
     color: white;
 
+
     
     font-size: 100px;
     animation: moving var(--duration_of_each_item) linear infinite;
@@ -55,7 +57,7 @@ div.menu-item{
 
 
 
-/*===============================MAIN SECTION===========*/
+/*===============================MAIN SECTION===========  IT'S MADE UP BY MULTIPLE SLIDES WE CALL FLYER*/
 div.flyer{
     width: var(--VIEWER_WIDTH);
     background-color: var(--darker-black);
@@ -69,12 +71,13 @@ div.flyer{
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: var(--white-space);
     }
 
 /*====================HEADLINE-FLYER============*/
     div.flyer:has(h1){
         background-color: black;
-        background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(26, 38, 52, 1));
+        background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(26, 38, 52, 1));
         transition: background-color 1.3s ;
         height: calc(var(--FLYER-HEIGHT) + 7vh);
     }
@@ -297,6 +300,7 @@ div.card.D{
 /*========================FLYER OF TRAPEZIUM==============================*/
 div.flyer:has(.trapzoid){
     background-color: var(--passion-orange);
+    margin: 0;
 }
 .trapzoid{
     /* trapzoid should be block-level and anchored to its parent flyer */
@@ -314,6 +318,24 @@ div.flyer:has(.trapzoid){
     background-position: center center; /*190% is to zoom pic even more downward*/
     background-attachment: scroll;
     background-repeat: no-repeat;
+    /*=============TRAPZOID=======*/
+}
+@keyframes LEFTSHIFT{
+    from{/*SHIFT WIDTH - 30%*/
+
+    }
+    to{
+        transform: translate(calc(-1 * var(--VIEWER_WIDTH) * 0.2 - var(--VIEWER_WIDTH)/2* 0.3));
+    }
+}
+
+@keyframes RIGHTSHIFT{
+    from{
+        
+    }
+    to{
+        transform: translate(calc( var(--VIEWER_WIDTH) * 0.2  + var(--VIEWER_WIDTH)/2* 0.3));
+    }
 }
 
 /**=========================ANIMATIONS=========================*/
@@ -333,6 +355,7 @@ div.flyer:has(.trapzoid){
     --complement-of-yellow: #203E5F;
     --darker-black: #1A2634;
     --notso-energetic-yellow: #EEC550;
+    --white-space: 25vh
 }
 @keyframes EXTEND {
      from{
@@ -398,25 +421,5 @@ div.flyer:has(.trapzoid){
     }
     to{
         transform: translateY(0%);
-    }
-}
-
-
-
-/*=============TRAPZOID=======*/
-@keyframes LEFTSHIFT{
-    from{/*SHIFT WIDTH - 30%*/
-
-    }
-    to{
-        transform: translate(calc(-1 * var(--VIEWER_WIDTH) * 0.2 - var(--VIEWER_WIDTH)/2* 0.3));
-    }
-}
-@keyframes RIGHTSHIFT{
-    from{
-        
-    }
-    to{
-        transform: translate(calc( var(--VIEWER_WIDTH) * 0.2  + var(--VIEWER_WIDTH)/2* 0.3));
     }
 }

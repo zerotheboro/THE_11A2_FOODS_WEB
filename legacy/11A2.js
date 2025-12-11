@@ -10,6 +10,16 @@ BANNER_11A2.addEventListener("animationend", () => {
     BANNER_11A2_TEXT.style.borderRight = "2px solid black";
 })
 */
+gsap.registerPlugin(
+  ScrollTrigger,
+  MotionPathPlugin,
+  TextPlugin,
+  Draggable,
+  CSSRulePlugin,
+  SplitText
+  // Add more here if you include them
+);
+
 //=====================================FLYER=========================================
 const FLYER_11A2 = document.getElementsByClassName("flyer");//list of all flyer elements
 
@@ -60,7 +70,7 @@ HEAD_LINE.style.color = '#FFD63A';
 alter_function_of_flyer(0, THE_HEAD_LINE);*/
 
 
-/*================================================*/
+/*=========================GSAP=======================*/
 
 
 function circle_flyer_function() {
@@ -127,5 +137,4 @@ window.addEventListener("scroll", () => {
         }
     }
 });
-
 
