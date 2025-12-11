@@ -63,7 +63,6 @@ div.flyer{
     background-color: var(--darker-black);
     transition: background-color 0.3s ease-in-out;
 }
-@media only screen and (min-width: 700px){
     div.flyer{
         height: var(--FLYER-HEIGHT);
         overflow: hidden;
@@ -89,213 +88,11 @@ div.flyer{
         text-align: center;
         text-shadow: 0px 0px 0px var(--lightblue);
         will-change: text-shadow;
-        animation: GLOW 4s infinite ;
         margin-bottom: calc(var(--FLYER-HEIGHT)/3);
     }
- @keyframes GLOW {
-            0%{
-              text-shadow:0px 0px 7px var(--lightblue)
-            }
-            50%{
-                text-shadow:0px 0px 45px var(--lightblue)
-            }
-            100%{
-                text-shadow:0px 0px 7px var(--lightblue)
-            }
-        }
 
 
 /*======================== DIV OF CIRCLE==============================*/
-    div.flyer:has(.CIRCLE){
-    }
-    div.flyer div.flyer-extender{
-        position: absolute;
-        width: calc(var(--VIEWER_WIDTH)* 0.55);
-        height: inherit;
-        background-color: var(--darker-black)/*same color as flyer*/;
-        transform-origin: right;
-    }
-    div.CIRCLE{
-        display:inline-flex;
-        opacity: 0;
-        position: absolute;
-        border-radius: 55%;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-    }
-    div.CIRCLE.ONE{
-        width: var(--CIRCLE1);
-        height: var(--CIRCLE1);
-        background-color: var(--lightblue);
-        z-index: 100;
-        top: calc((var(--FLYER-HEIGHT) - var(--CIRCLE1))/2);
-        left: calc(0vw - var(--CIRCLE1)/2);
-        img{
-        height: 80%;
-        width: 80%;
-        }
-    }
-     div.CIRCLE.TWO{
-        width: calc(var(--CIRCLE1)*0.3);
-        height:calc(var(--CIRCLE1)*0.3);
-        background-color: var(--tomato);
-        z-index: 101; /*z-index interact with circle one*/
-        bottom: calc(var(--FLYER-HEIGHT)* 0.02);
-        left:  calc(var(--VIEWER_WIDTH)* 0.02);
-        color: var(--notso-energetic-yellow);
-        font-size: calc(var(--CIRCLE1)*0.2);
-    }
-    }
-    div.CIRCLE.THREE{
-        width: calc(var(--CIRCLE1)*0.5);
-        height:calc(var(--CIRCLE1)*0.5);
-        left: calc(var(--VIEWER_WIDTH) * 0.16);
-        top: calc(var(--FLYER-HEIGHT)*0.1);
-        background-color: var(--tomato);
-        img{
-        height: 70%;
-        width: 70%;
-    }
-    }
-    div.CIRCLE.FOUR{
-        width: calc(var(--CIRCLE1)*0.2);
-        height:calc(var(--CIRCLE1)*0.2);
-        left: calc(var(--VIEWER_WIDTH) * 0.4);
-        top: calc(var(--FLYER-HEIGHT)*0.34);
-        background-color: transparent;
-        span{
-            font-size: 22vw;
-            font-weight: 700;
-            color: white;
-            line-height: 0;
-        }       
-    }
-    div.CIRCLE img{
-        transform-origin: center;
-        display: inline-block;
-        object-fit: cover;
-    }
-
-
-
-
-
-/*==========================FLYER OF BOX (GRID)=========================*/
-/*FOR BETTER IDEA CHECK GEO.CSS GEO.HTML */
-div.flyer.background{
-    background-image: url(image/homemade-chocolate-bars.jpg);
-    background-size: cover;
-    background-position: center center; /*205%;/*190% is to zoom pic even more downward*/
-    background-attachment:fixed;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-div.flyer:has(.GRID){
-    background-color: var(--darker-black);
-}
-div.GRID{
-    width: inherit;
-    height: inherit;
-    border: 2px solid var(--darker-black);
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-        "blacka trans1 trans2 trans3 blackb blackb"
-        "blacktag blacktag trans4 trans5 trans6 blackc"
-        "blackd blackd blackd blackd blackd blackd";
-    opacity: 1; 
-}
-div.trans1, div.trans2, div.trans3, div.trans4, div.trans5, div.trans6{
-    background-color: transparent;
-    border: 3px solid var(--darker-black);
-}
-trans1{
-    grid-area: trans1;
-}
-trans2{
-    grid-area: trans2;
-}
-trans3{
-    grid-area: trans3;
-}
-trans4{
-    grid-area: trans4;
-}
-trans5{
-    grid-area: trans5;
-}
-trans6{
-    grid-area: trans6;
-}
-div.black.a, div.black.b, div.black.c, div.black.d{
-    background-color: var(--darker-black);
-    border: 1px solid var(--darker-black);
-}
-div.black.a{
-    grid-area: blacka;
-}
-div.black.b{
-    grid-area: blackb;
-}
-div.black.c{
-    grid-area: blackc;
-}
-div.black.d{
-    grid-area: blackd;
-}
-div.GRID div.blacktag{
-    border: 3px solid var(--darker-black);
-    background-color: var(--darker-black);
-    color: var(--notso-energetic-yellow);
-    font-size: 82px;
-    font-weight: bold;
-    line-height: 0.8;
-    grid-area: blacktag;
-    text-align: left;
-    padding: 8px;
-}
-/*==========================FLYER of STACKING====================================*/
-div.card{
-    h2{
-        font-size: 16vw;
-        font-weight: bold;
-        text-align: center;
-    }
-    text-align: center;
-    display: inline-flex;
-    width: 100vw;
-    border-radius: 2vw;
-    border-bottom-right-radius: 0 ;
-    border-bottom-left-radius: 0;
-    position: sticky;
-    align-content: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: calc(100vh);
-    top: calc(-10vh + 5vh *var(--i));
-    transform: translate(0, calc(-5vh*var(--i)));
-}
-div.card.A{
-    background-color: var(--complement-of-yellow);
-}
-div.card.B{
-    background-color: var(--lightblue);
-}
-div.card.C{
-    background-color: var(--passion-orange);
-}
-div.card.D{
-    background-color:var(--tomato);
-    position: relative;
-    top: 0;
-    height: 100vh;
-    z-index: 0;
-     /*need adjustment*/
-    transform: scaleY(1.3);
-}
 
 /*========================FLYER OF TRAPEZIUM==============================*/
 div.flyer:has(.trapzoid){
@@ -309,33 +106,13 @@ div.flyer:has(.trapzoid){
     width: calc(var(--VIEWER_WIDTH) / 1.81);
     height: inherit;
     text-align: center;
-    padding: calc(var(--FLYER-HEIGHT) / 2.5) 0 calc(var(--FLYER-HEIGHT) / 2.5) 0;
     color: white;
-    font-size: 55px;
-    font-weight: 700;
     clip-path: polygon(25% 0, 95% 0, 75% 100%, 5% 100%);
     background-size: cover;
     background-position: center center; /*190% is to zoom pic even more downward*/
     background-attachment: scroll;
     background-repeat: no-repeat;
     /*=============TRAPZOID=======*/
-}
-@keyframes LEFTSHIFT{
-    from{/*SHIFT WIDTH - 30%*/
-
-    }
-    to{
-        transform: translate(calc(-1 * var(--VIEWER_WIDTH) * 0.2 - var(--VIEWER_WIDTH)/2* 0.3));
-    }
-}
-
-@keyframes RIGHTSHIFT{
-    from{
-        
-    }
-    to{
-        transform: translate(calc( var(--VIEWER_WIDTH) * 0.2  + var(--VIEWER_WIDTH)/2* 0.3));
-    }
 }
 
 /**=========================ANIMATIONS=========================*/
@@ -356,70 +133,4 @@ div.flyer:has(.trapzoid){
     --darker-black: #1A2634;
     --notso-energetic-yellow: #EEC550;
     --white-space: 25vh
-}
-@keyframes EXTEND {
-     from{
-        width: 0;
-    }
-    to{
-        width: var(--BANNER_WIDTH);
-        
-    }
-}
-@keyframes BLINK{
-    50%{
-        border-color: transparent;
-    }
-}
-
-
-
-@keyframes moving_across{
-    from{
-        transform:translateX(50vw) scaleX(0);
-    }
-    to{
-        transform:translateX(50vw) scaleX(1);
-    }
-}
-@keyframes EXPAND{
-    from{
-        transform: scale(0,0);
-        
-    }
-    to{
-        transform: scale(1,1);
-    }
-}
-@keyframes rotate{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(370deg);
-    }
-}
-@keyframes trans{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-@keyframes moving{
-    from{
-        left: 100%;
-    }
-    to{
-        left: calc( -100% - (var(--VIEWER_WIDTH)/5) );
-    }
-}
-@keyframes moving_upward{
-    from{
-        transform: translateY(-10%);
-    }
-    to{
-        transform: translateY(0%);
-    }
 }
