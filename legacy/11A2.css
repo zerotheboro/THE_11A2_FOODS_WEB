@@ -43,7 +43,7 @@ div.menu-item{
     left: 100%;
 
     background-color: rgb(0, 0, 0);
-    color: white;
+    color: var(--set-color-1);
 
 
     
@@ -75,14 +75,14 @@ div.flyer{
 
 /*====================HEADLINE-FLYER============*/
     div.flyer:has(h1){
-        background-color: black;
+        background-color: var(--energetic--yellow);
         background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(26, 38, 52, 1));
         transition: background-color 1.3s ;
         height: calc(var(--FLYER-HEIGHT) + 7vh);
     }
     div.flyer h1{
         font-size: 28vw;
-        color: black;
+        color: var(--set-color-4);
         font-weight: bold;
         letter-spacing: 0.05em;
         text-align: center;
@@ -93,27 +93,6 @@ div.flyer{
 
 
 /*======================== DIV OF CIRCLE==============================*/
-
-/*========================FLYER OF TRAPEZIUM==============================*/
-div.flyer:has(.trapzoid){
-    background-color: var(--passion-orange);
-    margin: 0;
-}
-.trapzoid{
-    /* trapzoid should be block-level and anchored to its parent flyer */
-    display: inline;
-    position: absolute;
-    width: calc(var(--VIEWER_WIDTH) / 1.81);
-    height: inherit;
-    text-align: center;
-    color: white;
-    clip-path: polygon(25% 0, 95% 0, 75% 100%, 5% 100%);
-    background-size: cover;
-    background-position: center center; /*190% is to zoom pic even more downward*/
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    /*=============TRAPZOID=======*/
-}
 
 /**=========================ANIMATIONS=========================*/
 
@@ -132,5 +111,9 @@ div.flyer:has(.trapzoid){
     --complement-of-yellow: #203E5F;
     --darker-black: #1A2634;
     --notso-energetic-yellow: #EEC550;
-    --white-space: 25vh
+    --white-space: 25vh;
+    --set-color-1: #F9F7F7;
+    --set-color-2: #DBE2EF;
+    --set-color-3: #3F72AF;
+    --set-color-4:  #112D4E;
 }

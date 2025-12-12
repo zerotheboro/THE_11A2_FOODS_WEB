@@ -2,7 +2,10 @@ function Opening(){
     return(
         <header>
             <div class="flyer">
-                <h1>11A2</h1>
+                <video autoPlay loop muted>
+                    <source src="./image/MAC&CHEESE.mp4"></source>
+                </video>
+                <h1>hi</h1>
             </div>
         </header>
     )
