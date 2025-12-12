@@ -1,14 +1,3 @@
-/*header 1 has 1:1 aspect font size/ margin 
-p is 1/1.5
- CASCADING EFFECTS IN PPT REMEMBER IT IN YT PLAYLIST
- display: hidden  to make it disappear
- display: none to make it disappear and not take up space
- background-clip: text; to make background image appear in text
-  text-fill-color: transparent; to make the text color transparent
-  then add gradient background to the text
-
-
-*/
 
 *{
     font-family: monospace;
@@ -22,6 +11,7 @@ body{
     padding: 0;
     background-color: var(--darker-black);
 }
+
 
 div.menu{
     display: flex;
@@ -58,38 +48,46 @@ div.menu-item{
 
 
 /*===============================MAIN SECTION===========  IT'S MADE UP BY MULTIPLE SLIDES WE CALL FLYER*/
-div.flyer{
+div.header{
+    position: relative;
     width: var(--VIEWER_WIDTH);
-    background-color: var(--darker-black);
-    transition: background-color 0.3s ease-in-out;
+    height: var(--FLYER-HEIGHT);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--energetic--yellow);
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(26, 38, 52, 1));
 }
-    div.flyer{
-        height: var(--FLYER-HEIGHT);
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: var(--white-space);
-    }
+video{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+}
 
 /*====================HEADLINE-FLYER============*/
-    div.flyer:has(h1){
-        background-color: var(--energetic--yellow);
-        background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(26, 38, 52, 1));
-        transition: background-color 1.3s ;
-        height: calc(var(--FLYER-HEIGHT) + 7vh);
-    }
-    div.flyer h1{
-        font-size: 28vw;
-        color: var(--set-color-4);
-        font-weight: bold;
-        letter-spacing: 0.05em;
-        text-align: center;
-        text-shadow: 0px 0px 0px var(--lightblue);
-        will-change: text-shadow;
-        margin-bottom: calc(var(--FLYER-HEIGHT)/3);
-    }
+#HERO{
+    font-size: 10vw;
+    color: var(--set-color-1);
+    font-weight: bold;
+    text-align: center;
+    z-index: 99;
+    transform: translate(-10%);
+    opacity: 0;
+    transition: all 2s;
+    text-align: center;
+}
+#HERO.show{
+    transform: translate(0);
+    opacity: 1;
+    text-align: center;
+}
+
+div.body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(26, 38, 52, 1), rgba(26, 38, 52, 1),);
+
+}
 
 
 /*======================== DIV OF CIRCLE==============================*/
