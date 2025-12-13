@@ -11,6 +11,9 @@ body{
     padding: 0;
     background-color: var(--darker-black);
 }
+h1, h2, p{
+    text-align: center;
+}
 
 
 div.menu{
@@ -48,7 +51,7 @@ div.menu-item{
 
 
 /*===============================MAIN SECTION===========  IT'S MADE UP BY MULTIPLE SLIDES WE CALL FLYER*/
-div.header{
+header{
     position: relative;
     width: var(--VIEWER_WIDTH);
     height: var(--FLYER-HEIGHT);
@@ -57,18 +60,17 @@ div.header{
     justify-content: center;
     align-items: center;
     background-color: var(--energetic--yellow);
-    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(26, 38, 52, 1));
 }
 video{
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     position: absolute;
 }
 
 /*====================HEADLINE-FLYER============*/
 #HERO{
-    font-size: 10vw;
+    font-size: 24vw;
     color: var(--set-color-1);
     font-weight: bold;
     text-align: center;
@@ -84,13 +86,18 @@ video{
     text-align: center;
 }
 
-div.body{
-    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(26, 38, 52, 1), rgba(26, 38, 52, 1),);
-
+section.body{
+    width: 100%;
+    height: 55vh;
+    transform: translate(0, -70%);
+    z-index: 7;
+    background-image: linear-gradient(#ffffff00,#20405f44,#203f5f89,#20405fba,#20405fe8, var(--complement-of-yellow), var(--complement-of-yellow), var(--complement-of-yellow));
 }
 
 
 /*======================== DIV OF CIRCLE==============================*/
+
+
 
 /**=========================ANIMATIONS=========================*/
 

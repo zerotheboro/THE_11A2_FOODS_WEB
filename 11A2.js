@@ -1,4 +1,4 @@
-
+function animation_with_settime(){
 const header_h1 = document.getElementById("HERO")
 const observer = new IntersectionObserver((entries) => {
     (entries[0].isIntersecting) ?
@@ -9,6 +9,9 @@ const observer = new IntersectionObserver((entries) => {
 
 });
 observer.observe(header_h1)
+}
+
+setTimeout(animation_with_settime, 100)
 
 
 

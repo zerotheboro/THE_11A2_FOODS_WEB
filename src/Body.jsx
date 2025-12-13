@@ -1,10 +1,10 @@
-function Body(){
+function Body(props){
     return(
-        <>
-            <div className="body">
+        <section className="body">
+            <div>
                 
             </div>
-        </>
+        </section>
     )
 }
 export default Body;
