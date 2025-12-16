@@ -9,7 +9,7 @@ body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background-color: var(--darker-black);
+    background-color: var(--complement-of-yellow);
 }
 h1, h2, p{
     text-align: center;
@@ -91,7 +91,7 @@ section.body{
     height: 55vh;
     transform: translate(0, -70%);
     z-index: 7;
-    background-image: linear-gradient(#ffffff00,#20405f44,#203f5f89,#20405fba,#20405fe8, var(--complement-of-yellow), var(--complement-of-yellow), var(--complement-of-yellow));
+    background-image: linear-gradient(#ffffff00,#20405f44,#203f5f89,#20405fba,#20405fe8,var(--complement-of-yellow),var(--complement-of-yellow), var(--complement-of-yellow), var(--complement-of-yellow), var(--complement-of-yellow));
 }
 
 
