@@ -1,5 +1,6 @@
 function animation_with_settime(){
 const header_h1 = document.getElementById("HERO")
+
 const observer = new IntersectionObserver((entries) => {
     (entries[0].isIntersecting) ?
      entries[0].target.classList.add("show") 

@@ -1,6 +1,5 @@
 
 *{
-    font-family: monospace;
     scroll-behavior: smooth;
     box-sizing: border-box;
     margin: 0;
@@ -13,42 +12,15 @@ body{
 }
 h1, h2, p{
     text-align: center;
+       color: white;
 }
-
-
-div.menu{
-    display: flex;
-    height: 55vh;
-    gap: 10px;
-
-    position:relative;
-    width: var(--VIEWER_WIDTH);
-    overflow: hidden;
-    margin-bottom: var(--white-space);
-}
-div.menu-item{
-    position: absolute;
-    top: 0;
-    display: flex;
-    height: inherit;
-    width: calc(var(--VIEWER_WIDTH) / 2);
-    position: absolute;
-    left: 100%;
-
-    background-color: rgb(0, 0, 0);
-    color: var(--set-color-1);
-
-
+h1, h2{
+    font-family:  var(--header-font);
     
-    font-size: 100px;
-    animation: moving var(--duration_of_each_item) linear infinite;
-    
-    animation-delay: calc((var(--duration_of_each_item) / var(--number_OF_ITEMS)) * var(--i) * -1);
 }
-
-
-
-
+p{
+    font-family: var(--paragraph-font);
+}
 
 /*===============================MAIN SECTION===========  IT'S MADE UP BY MULTIPLE SLIDES WE CALL FLYER*/
 header{
@@ -65,17 +37,22 @@ video{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
+    position: fixed;
+    z-index: 0;
+    right: 0;
+    top: 0;
+
 }
 
 /*====================HEADLINE-FLYER============*/
 #HERO{
     font-size: 24vw;
+    font-family: "Bebas Neue", "Permanent Marker";
     color: var(--set-color-1);
     font-weight: bold;
     text-align: center;
     z-index: 99;
-    transform: translate(-10%);
+    transform: translate(-20%);
     opacity: 0;
     transition: all 2s;
     text-align: center;
@@ -85,14 +62,78 @@ video{
     opacity: 1;
     text-align: center;
 }
+.show{
+    transform: translate(10px);
+    transition: all 700ms ease-in 300ms;
+}
 
-section.body{
+
+section.boder{
     width: 100%;
     height: 55vh;
-    transform: translate(0, -70%);
+    transform: scaleY(2);
     z-index: 7;
     background-image: linear-gradient(#ffffff00,#20405f44,#203f5f89,#20405fba,#20405fe8,var(--complement-of-yellow),var(--complement-of-yellow), var(--complement-of-yellow), var(--complement-of-yellow), var(--complement-of-yellow));
 }
+section.body{
+    z-index: 7;
+    position: relative;
+    background-color: var(--complement-of-yellow);
+    div.food_div{
+        h1{
+            font-size: 7vw;
+        }
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 50%;
+            height: auto;
+            align-self: center;
+        }
+
+    }
+}
+
+/*=====ANIMATION======*/
+div.food_div > h1{
+    animation: cascade_fade_rotate both;
+}
+div.food_div > h2{
+    animation: cascade_fade_rotatetwo both;
+}
+div.food_div > h1,div.food_div > h2 {
+    animation-timeline: view();
+    animation-range: 10% 70%;
+    /*time_line always behind animitnation itself*/
+}
+
+
+@keyframes cascade_fade_rotate {
+    0%{
+        
+        transform: translateY(77px) scale(0.7) rotate(7deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes cascade_fade_rotatetwo {
+    0%{
+        
+        transform: translateY(77px) scale(0.7) rotate(-14deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+ }
+
+
 
 
 /*======================== DIV OF CIRCLE==============================*/
@@ -102,6 +143,8 @@ section.body{
 /**=========================ANIMATIONS=========================*/
 
 :root{
+    --header-font: "Space Mono", monospace;
+    --paragraph-font: "Questrial", "";
     --BANNER_WIDTH: 70vw;
     --VIEWER_WIDTH: 100vw;
     --number_OF_ITEMS: 4;
