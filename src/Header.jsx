@@ -6,7 +6,9 @@ function Header(){
                     <source src={video} type="video/mp4"></source>
                     <p>the video isn't supported</p>
             </video>
-            <h1 id="HERO">11A2</h1>
+            <h1 className='HERO'>Feeling hungry?</h1>
+            <br/>
+            <h1 className="HERO">Try 11A2 products</h1>
         </header>
     )
 }

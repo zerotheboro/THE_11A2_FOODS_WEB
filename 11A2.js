@@ -1,15 +1,17 @@
 function animation_with_settime(){
-const header_h1 = document.getElementById("HERO")
+const header_h1 = document.querySelectorAll(".HERO")
 
 const observer = new IntersectionObserver((entries) => {
-    (entries[0].isIntersecting) ?
-     entries[0].target.classList.add("show") 
-     : entries[0].target.classList.remove("show")
+    entries.forEach((entry) =>{
+        (entry.isIntersecting) ?
+        entry.target.classList.add("show") 
+        : entry.target.classList.remove("show")
+    })
+    
 }, 
-{
-
-});
-observer.observe(header_h1)
+{});
+observer.observe(header_h1[0])
+observer.observe(header_h1[1])
 }
 
 setTimeout(animation_with_settime, 100)

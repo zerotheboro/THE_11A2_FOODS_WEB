@@ -45,8 +45,8 @@ video{
 }
 
 /*====================HEADLINE-FLYER============*/
-#HERO{
-    font-size: 24vw;
+.HERO{
+    font-size: 7vw;
     font-family: "Bebas Neue", "Permanent Marker";
     color: var(--set-color-1);
     font-weight: bold;
@@ -57,7 +57,7 @@ video{
     transition: all 2s;
     text-align: center;
 }
-#HERO.show{
+.HERO.show{
     transform: translate(0);
     opacity: 1;
     text-align: center;
@@ -83,15 +83,27 @@ section.body{
         h1{
             font-size: 7vw;
         }
+        h2{
+            font-size: 2vw;
+        }
         margin-top: 10vh;
         display: flex;
         flex-direction: column;
+        img.left{
+            align-self: flex-start;
+            animation: cascade_fade_rotate both;
+
+        }
+        img.right{
+            align-self: flex-end;
+            animation: cascade_fade_rotatetwo both;
+        }
         img{
             width: 50%;
             height: auto;
-            align-self: center;
+            animation-timeline: view() !important;
+            animation-range: 0% 55% !important;
         }
-
     }
 }
 
