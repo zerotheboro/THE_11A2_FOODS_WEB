@@ -80,47 +80,56 @@ section.body{
     position: relative;
     background-color: var(--complement-of-yellow);
     div.food_div{
-        h1{
-            font-size: 7vw;
-        }
-        h2{
-            font-size: 2vw;
-        }
         margin-top: 10vh;
-        display: flex;
-        flex-direction: column;
-        img.left{
-            align-self: flex-start;
-            animation: cascade_fade_rotate both;
-
-        }
-        img.right{
-            align-self: flex-end;
-            animation: cascade_fade_rotatetwo both;
-        }
-        img{
+        display: grid;
+        grid-template:  1fr 1fr 3fr/ 1fr 1fr;
+        > img{
             width: 50%;
             height: auto;
             animation-timeline: view() !important;
             animation-range: 0% 55% !important;
+            grid-area: img;
+        }
+        > p{
+            grid-area: para;
+            font-family: var(--paragraph-font);
+        }
+        > h1{
+            grid-area: header;
+            font-size: 8vw;
+            animation: cascade_fade_rotate both;
+        }
+        > h2{
+            grid-area: price;
+            font-size: 2vw;
+            animation: cascade_fade_rotatetwo both;
+        }
+        >h1, >h2{
+            animation-timeline: view();
+            animation-range: 10% 70%;
         }
     }
+    div.food_div.left{
+        grid-template-areas:"header header"
+                            "price price"
+                            "img para" ;
+        img{
+            justify-self: start;
+            animation: cascade_fade_rotate both;
+        }
+    }
+    div.food_div.right{
+        grid-template-areas:"header header"
+                            "price price"
+                            "para img" ;
+        img{
+            justify-self: end;
+            animation: cascade_fade_rotatetwo both;
+        }
+    } 
 }
 
 /*=====ANIMATION======*/
-div.food_div > h1{
-    animation: cascade_fade_rotate both;
-}
-div.food_div > h2{
-    animation: cascade_fade_rotatetwo both;
-}
-div.food_div > h1,div.food_div > h2 {
-    animation-timeline: view();
-    animation-range: 10% 70%;
-    /*time_line always behind animitnation itself*/
-}
-
-
 @keyframes cascade_fade_rotate {
     0%{
         
@@ -155,8 +164,8 @@ div.food_div > h1,div.food_div > h2 {
 /**=========================ANIMATIONS=========================*/
 
 :root{
-    --header-font: "Space Mono", monospace;
-    --paragraph-font: "Questrial", "";
+    --header-font:"Space Mono", monospace;
+    --paragraph-font: "Inter", monospace ;
     --BANNER_WIDTH: 70vw;
     --VIEWER_WIDTH: 100vw;
     --number_OF_ITEMS: 4;
